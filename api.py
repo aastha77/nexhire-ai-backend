@@ -2,37 +2,17 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
-from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
 
-app.add_middleware(
-
-CORSMiddleware,
-
-allow_origins=[
-
-"http://localhost:3000"
-
-],
-
-allow_credentials=True,
-
-allow_methods=["*"],
-
-allow_headers=["*"],
-
-)
-
-# CORS FIX
 
 app.add_middleware(
-
     CORSMiddleware,
 
     allow_origins=[
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "https://nexhire-frontend-pearl.vercel.app"
     ],
 
     allow_credentials=True,
@@ -42,8 +22,6 @@ app.add_middleware(
     allow_headers=["*"],
 
 )
-
-
 
 
 
